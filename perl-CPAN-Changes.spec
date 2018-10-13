@@ -4,14 +4,15 @@
 #
 Name     : perl-CPAN-Changes
 Version  : 0.400002
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Summary  : 'Read and write Changes files'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-CPAN-Changes-bin
-Requires: perl-CPAN-Changes-man
+Requires: perl-CPAN-Changes-bin = %{version}-%{release}
+Requires: perl-CPAN-Changes-man = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 NAME
@@ -23,10 +24,20 @@ my $changes = CPAN::Changes->load( 'Changes' );
 %package bin
 Summary: bin components for the perl-CPAN-Changes package.
 Group: Binaries
-Requires: perl-CPAN-Changes-man
+Requires: perl-CPAN-Changes-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-CPAN-Changes package.
+
+
+%package dev
+Summary: dev components for the perl-CPAN-Changes package.
+Group: Development
+Requires: perl-CPAN-Changes-bin = %{version}-%{release}
+Provides: perl-CPAN-Changes-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-CPAN-Changes package.
 
 
 %package man
@@ -63,9 +74,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -74,21 +85,24 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/CPAN/Changes.pm
-/usr/lib/perl5/site_perl/5.26.1/CPAN/Changes/Group.pm
-/usr/lib/perl5/site_perl/5.26.1/CPAN/Changes/Release.pm
-/usr/lib/perl5/site_perl/5.26.1/CPAN/Changes/Spec.pod
-/usr/lib/perl5/site_perl/5.26.1/Test/CPAN/Changes.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CPAN/Changes.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CPAN/Changes/Group.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CPAN/Changes/Release.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CPAN/Changes/Spec.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Test/CPAN/Changes.pm
 
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/tidy_changelog
 
-%files man
+%files dev
 %defattr(-,root,root,-)
-/usr/share/man/man1/tidy_changelog.1
 /usr/share/man/man3/CPAN::Changes.3
 /usr/share/man/man3/CPAN::Changes::Group.3
 /usr/share/man/man3/CPAN::Changes::Release.3
 /usr/share/man/man3/CPAN::Changes::Spec.3
 /usr/share/man/man3/Test::CPAN::Changes.3
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/man1/tidy_changelog.1
