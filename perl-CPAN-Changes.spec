@@ -4,10 +4,10 @@
 #
 Name     : perl-CPAN-Changes
 Version  : 0.400002
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
-Summary  : 'Read and write Changes files'
+Summary  : Read and write Changes files
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-CPAN-Changes-bin = %{version}-%{release}
@@ -24,7 +24,6 @@ my $changes = CPAN::Changes->load( 'Changes' );
 %package bin
 Summary: bin components for the perl-CPAN-Changes package.
 Group: Binaries
-Requires: perl-CPAN-Changes-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-CPAN-Changes package.
@@ -35,6 +34,7 @@ Summary: dev components for the perl-CPAN-Changes package.
 Group: Development
 Requires: perl-CPAN-Changes-bin = %{version}-%{release}
 Provides: perl-CPAN-Changes-devel = %{version}-%{release}
+Requires: perl-CPAN-Changes = %{version}-%{release}
 
 %description dev
 dev components for the perl-CPAN-Changes package.
