@@ -115,8 +115,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/CPAN/Changes.pm
-/usr/lib/perl5/vendor_perl/5.32.1/CPAN/Changes/Group.pm
-/usr/lib/perl5/vendor_perl/5.32.1/CPAN/Changes/Release.pm
-/usr/lib/perl5/vendor_perl/5.32.1/CPAN/Changes/Spec.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Test/CPAN/Changes.pm
+/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes.pm
+/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Group.pm
+/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Release.pm
+/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Spec.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Test/CPAN/Changes.pm
