@@ -4,7 +4,7 @@
 #
 Name     : perl-CPAN-Changes
 Version  : 0.400002
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Summary  : 'Read and write Changes files'
