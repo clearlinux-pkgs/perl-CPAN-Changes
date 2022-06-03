@@ -4,7 +4,7 @@
 #
 Name     : perl-CPAN-Changes
 Version  : 0.400002
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz
 Summary  : 'Read and write Changes files'
@@ -115,8 +115,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Group.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Release.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CPAN/Changes/Spec.pod
-/usr/lib/perl5/vendor_perl/5.34.0/Test/CPAN/Changes.pm
+/usr/lib/perl5/*
