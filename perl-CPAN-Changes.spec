@@ -7,7 +7,7 @@
 #
 Name     : perl-CPAN-Changes
 Version  : 0.500004
-Release  : 29
+Release  : 30
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.500004.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.500004.tar.gz
 Summary  : 'Parser for CPAN style change logs'
